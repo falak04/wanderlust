@@ -1,0 +1,15 @@
+<h3>Results for "<%= query %>":</h3>
+
+<% if (results.length > 0) { %>
+  <ul>
+    <% results.forEach(listing => { %>
+      <li>
+        <a href="/listings/<%= listing._id %>">
+          <%= listing.title %> — <%= listing.location %>, <%= listing.country %>
+        </a>
+      </li>
+    <% }) %>
+  </ul>
+<% } else { %>
+  <p>No matching listings found.</p>
+<% } %>
